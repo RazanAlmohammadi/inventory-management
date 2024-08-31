@@ -6,7 +6,7 @@ In this assignment, you will create a simple inventory management system which a
 
 ## Level 1 - Mandatory
 
-1. Create class `Item`, which has name (readonly), quantity, and created date, which are private. Amount of each item cannot be negative. Provide the following features:
+1. Create class `Item`, which has name, quantity, and created date, which are private. Amount of each item cannot be negative. Provide the following features:
 
 - Constructor to take parameters of name, quantity, and created date (optional, if not set, it will be current date).
 
