@@ -8,7 +8,7 @@ In this assignment, you will create a simple inventory management system which a
 
 1. Create class `Item`, which has name (readonly), quantity, and created date, which are private. Amount of each item cannot be negative. Provide the following features:
 
-- Contructor to take parameters of name, quantity, and created date (optional, if not set, it will be current date).
+- Constructor to take parameters of name, quantity, and created date (optional, if not set, it will be current date).
 
 2. Create class `Store` with the following properties and methods:
 
@@ -41,7 +41,7 @@ var sunscreen = new Item("Sunscreen", 8);
 
 Class `Store` should have the following features:
 
-- Maximum capacity , which is total amount of items allowed in the store, and contructor should also take an integer value as the maximum capacity of the inventory.
+- Maximum capacity , which is total amount of items allowed in the store, and constructor should also take an integer value as the maximum capacity of the inventory.
 - Modify the add method to not overload the capacity
 
 ## Level 3 - Extra feature: Complex functionalities
