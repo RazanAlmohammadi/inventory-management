@@ -6,7 +6,7 @@ namespace onlineInventoryManagement
     {
         public static void Main()
         {
-            Store store = new Store();
+            Store store = new Store(100);
             var waterBottle = new Item("Water Bottle", 10, new DateTime(2023, 1, 1));
             var chocolateBar = new Item("Chocolate Bar", 15, new DateTime(2023, 2, 1));
             var coffee = new Item("Coffee", 20);

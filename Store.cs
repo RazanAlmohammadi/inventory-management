@@ -8,14 +8,22 @@ namespace onlineInventoryManagement
     public class Store
     {
         private List<Item> _items;
-
-        public Store()
+        private int _maximumCapacity = 100;
+        public Store(int _MaximumCapacity)
         {
             _items = new List<Item>();
+            _maximumCapacity = _maximumCapacity;
         }
 
         public void AddItem(Item item)
         {
+            int currentVolume = GetCurrentVolume();
+
+            if (currentVolume + item.Quantity > _maximumCapacity)
+            {
+                Console.WriteLine($"Cannot add '{item.Name}': Over capacity.");
+                return;
+            }
             if (_items.Any(i => i.Name == item.Name))
             {
                 Console.WriteLine("An item with the same name already exists in the store");
