@@ -26,7 +26,7 @@ namespace onlineInventoryManagement
             }
             if (_items.Any(i => i.Name == item.Name))
             {
-                Console.WriteLine("An item with the same name already exists in the store");
+                throw new Exception("An item with the same name already exists in the store");
             }
             _items.Add(item);
         }
@@ -44,7 +44,7 @@ namespace onlineInventoryManagement
             }
             else
             {
-                Console.WriteLine($"Item '{name}' not found");
+                throw new KeyNotFoundException($"Item '{name}' not found");
             }
         }
 
