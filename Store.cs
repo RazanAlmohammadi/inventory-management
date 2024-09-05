@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace onlineInventoryManagement
 {
+    public enum SortOrder
+    {
+        ASC,
+        DESC
+    }
     public class Store
     {
         private List<Item> _items;
@@ -63,6 +68,31 @@ namespace onlineInventoryManagement
             return _items.OrderBy(i => i.Name).ToList();
         }
 
+        public List<Item> SortByDate(SortOrder sortOrder)
+        {
+            if (sortOrder == SortOrder.ASC)
+            {
+                return _items.OrderBy(i => i.CreatedDate).ToList();
+            }
+            else
+            {
+                return _items.OrderByDescending(i => i.CreatedDate).ToList();
+            }
+        }
 
+        public Dictionary<string, List<Item>> GroupByDate()
+        {
+            DateTime threeMonthsAgo = DateTime.Now.AddMonths(-3);
+            var newArrival = _items.Where(i => i.CreatedDate >= threeMonthsAgo).ToList();
+            var oldItems = _items.Where(i => i.CreatedDate < threeMonthsAgo).ToList();
+
+            return new Dictionary<string, List<Item>>
+            {
+                { "New Arrival", newArrival },
+                { "Old", oldItems }
+            };
+        }
     }
+
 }
+

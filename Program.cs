@@ -60,9 +60,15 @@ namespace onlineInventoryManagement
             }
             Console.WriteLine($"Current Volume: {store.GetCurrentVolume()}");
 
-
-
-
+            var groupByDate = store.GroupByDate();
+            foreach (var group in groupByDate)
+            {
+                Console.WriteLine($"{group.Key} Items:");
+                foreach (var item in group.Value)
+                {
+                    Console.WriteLine($" - {item.Name}, Created: {item.CreatedDate.ToShortDateString()}");
+                }
+            }
         }
     }
 }
