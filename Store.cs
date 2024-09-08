@@ -13,13 +13,12 @@ namespace onlineInventoryManagement
     public class Store
     {
         private List<Item> _items;
-        private int _maximumCapacity = 100;
-        public Store(int _MaximumCapacity)
+        private int _maximumCapacity;
+        public Store(int maximumCapacity)
         {
             _items = new List<Item>();
-            _maximumCapacity = _maximumCapacity;
+            _maximumCapacity = maximumCapacity;
         }
-
         public void AddItem(Item item)
         {
             int currentVolume = GetCurrentVolume();
